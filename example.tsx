@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {HashRouter as Router, Route, NavLink} from 'react-router-dom';
+import {HashRouter as Router, Route, NavLink, Redirect} from 'react-router-dom';
 import Intro from './lib/intro'
 import DialogDemo from './lib/dialog/dialog.demo';
 import ButtonDemo from './lib/button/button.demo';
@@ -55,6 +55,9 @@ ReactDOM.render(
         </Aside>
         <Content className={"site-main"}>
           <div className="main-wrapper">
+            <Route path='/' exact render={()=> (
+              <Redirect to='/intro'/>
+            )}/>
             <Route path="/intro" component={Intro}/>
             <Route path="/icon" component={IconDemo}/>
             <Route path="/button" component={ButtonDemo}/>
