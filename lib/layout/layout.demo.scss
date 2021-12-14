@@ -1,0 +1,28 @@
+%text-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.x {
+  @extend %text-center;
+  height: 40px;
+  background: #4285f4;
+  margin: 4px 0;
+  color: white;
+}
+.y {
+  @extend %text-center;
+  background: lighten(#4285f4, 5%);
+  margin: 4px 0;
+  color: white;
+}
+.z {
+  @extend %text-center;
+  background: #34a853;
+  width: 100px;
+  margin: 4px 0;
+  color: white;
+}
+.z + .y, .y + .z, .z + .paddy-layout {
+  margin-left: 8px;
+}

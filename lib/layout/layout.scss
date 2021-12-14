@@ -1,0 +1,28 @@
+@import "../helper";
+.paddy-layout {
+  display: flex;
+  flex-direction: column;
+  &-content {
+    flex-grow: 1;
+  }
+  & & {
+    flex-grow: 1;
+    flex-direction: row;
+  }
+  & & & {
+    flex-grow: 1;
+    flex-direction: column;
+  }
+  & .paddy-layout.paddy-layout-hasAside .paddy-layout.paddy-layout-hasAside {
+    flex-direction: row;
+  }
+}
+.paddy-layout-hasAside {
+  flex-direction: row;
+  >.paddy-layout {
+    flex-direction: column;
+  }
+  & .paddy-layout & {
+    flex-direction: row;
+  }
+}

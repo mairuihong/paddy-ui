@@ -1,0 +1,158 @@
+$h: 32px;
+$border-color: #d9d9d9;
+$color: #333333;
+$blue: #1c9fd8;
+$radius: 4px;
+$red: red;
+$white: white;
+$yellow: #f5c401;
+$grey: grey;
+.paddy-button {
+  height: $h;
+  padding: 0 12px;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  background: $white;
+  color: $color;
+  border: 1px solid $border-color;
+  border-radius: $radius;
+  box-shadow: 0 1px 0 fade-out(black, 0.95);
+  transition: background 250ms;
+  & + & {
+    margin-left: 8px;
+    margin-bottom: 8px;
+  }
+  &:hover,
+  &:focus {
+    color: $blue;
+    border-color: $blue;
+  }
+  &:focus {
+    outline: none;
+  }
+  &::-moz-focus-inner {
+    border: 0;
+  }
+  &.paddyBtn-level-main {
+    background: $blue;
+    color: $white;
+    border-color: $blue;
+    &:hover,
+    &:focus {
+      background: lighten($blue, 10%);
+      border-color: lighten($blue, 10%);
+    }
+  }
+  &.paddyBtn-level-warning {
+    background: $white;
+    color: $yellow;
+    &:hover,
+    &:focus {
+      color: $white;
+      background: $yellow;
+      border-color: $yellow;
+    }
+  }
+  &.paddyBtn-level-danger {
+    background: $white;
+    color: $red;
+    &:hover,
+    &:focus {
+      color: $white;
+      background: $red;
+      border-color: $red;
+    }
+  }
+  &.paddyBtn-type-noBG {
+    background: transparent;
+    color: $white;
+    border-color: $white;
+    &:hover,
+    &:focus {
+      color: $blue;
+      border-color: $blue;
+    }
+    &.paddyBtn-level-main {
+      color: $blue;
+      border-color: $blue;
+      &:hover,
+      &:focus {
+        background: transparent;
+        color: lighten($blue, 10%);
+        border-color: lighten($blue, 10%);
+      }
+    }
+    &.paddyBtn-level-warning {
+      color: $yellow;
+      border-color: $yellow;
+      &:hover,
+      &:focus {
+        background: transparent;
+        border-color: lighten($yellow, 15%);
+      }
+    }
+    &.paddyBtn-level-danger {
+      color: $red;
+      border-color: $red;
+      &:hover,
+      &:focus {
+        background: transparent;
+        border-color: darken($red, 10%);
+      }
+    }
+  }
+  &.paddyBtn-loading {
+    > .paddy--loadingIndicator {
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      margin-right: 4px;
+      border-radius: 8px;
+      border-color: $blue $blue $blue transparent;
+      border-style: solid;
+      border-width: 2px;
+      animation: paddy-spin 1s infinite linear;
+    }
+    &.paddyBtn-type-noBG {
+      &:hover, &:focus {
+        > .paddy--loadingIndicator {
+          border-color: $blue $blue $blue transparent;
+        }
+      }
+    }
+    &.paddyBtn-level-main,  &.paddyBtn-type-noBG {
+      > .paddy--loadingIndicator {
+        border-color: $white $white $white transparent;
+      }
+    }
+  }
+  &.paddyBtn-disabled {
+    cursor: not-allowed;
+    color: $grey;
+    background: darken($white, 5%);
+    &:hover,
+    &:focus {
+      border-color: $grey;
+    }
+    &.paddyBtn-type-noBG {
+      color: $grey;
+      background: transparent;
+      border-color: $grey;
+      &:hover,
+      &:focus {
+        border-style: dashed;
+      }
+    }
+  }
+}
+@keyframes paddy-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

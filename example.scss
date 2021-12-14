@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*::before {
+  box-sizing: border-box;
+}
+*::after {
+  box-sizing: border-box;
+}
+ul, ol {
+  list-style: none;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  border: none;
+}
+pre {
+  font-family: "Fira Code Medium", Consolas, monospace;
+  padding: 16px;
+  margin-top: 4px;
+  border-radius: 8px;
+}
+$padding: 16px;
+$main-color: #40a9ff;
+$border-color: #d9d9d9;
+body {
+  font-size: 16px;
+}
+.site-page {
+  background: #ffffff;
+  min-height: 100vh;
+}
+.site-main {
+  padding-top: 16px;
+  .main-wrapper {
+    margin: 0 auto;
+    min-width: 500px;
+    max-width: 1000px;
+    a {
+      color: deepskyblue;
+      &:hover {
+        background: #d9d9d9;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+.site-header {
+  background: #ffffff;
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: inset 0 -3px 3px -3px rgba(0, 0, 0, 0.25),
+  inset 0 0px 0px 0px rgba(0, 0, 0, 0.25);
+  .logo {
+    padding: 0 $padding;
+    display: flex;
+    align-items: center;
+    > img {
+      width: 32px;
+      height: 32px;
+      margin-right: 8px;
+    }
+    > span {
+      color: $main-color;
+      font-size: 28px;
+    }
+  }
+  .link-wrapper {
+    padding: 0 $padding;
+    display: flex;
+    flex-direction: row;
+    a {
+      color: $main-color;
+      margin-right: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        color: darken($main-color, 10%);
+      }
+      .paddy-icon {
+        margin-right: 4px;
+      }
+    }
+  }
+}
+.site-aside {
+  border-right: 1px solid $border-color;
+  margin-right: 16px;
+  h2 {
+    padding: 0 16px;
+    margin:16px 0 8px;
+    font-size: 20px;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: #1890ff;
+    }
+  }
+  ul {
+    min-width: 12em;
+    > li {
+      a {
+        color: #333;
+        display: block;
+        padding: 8px $padding;
+        position: relative;
+        &:hover {
+          color: $main-color;
+        }
+        &.active {
+          color: white;
+          background: $main-color;
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 3px;
+            height: 100%;
+            background: darken(#1890ff, 10%);
+          }
+        }
+      }
+    }
+  }
+}
+.site-footer {
+  text-align: center;
+  font-size: 14px;
+  padding: 16px 0;
+  border-top: 1px solid $border-color;
+  background: #404549;
+  .link-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    a {
+      color: #8c8c8c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:nth-child(1){
+        margin-right: 8px;
+      }
+      &:hover {
+        color: lighten(#8c8c8c, 10%);
+      }
+      .paddy-icon {
+        margin-right: 4px;
+      }
+    }
+  }
+}
+// 组件展示页面样式
+h1 {
+  font-size: 32px;
+  line-height: 40px;
+  margin-bottom: 16px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 32px;
+  margin-top: 32px;
+  margin-bottom: 8px;
+}
+h3 {
+  font-size: 20px;
+  line-height: 24px;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+span {
+  color: #1c9fd8;
+  font-weight: 700;
+}
+p {
+  margin-bottom: 8px;
+}
+.examples {
+  margin-top: 16px;
+  .example-wrapper {
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    padding: 16px 0;
+    margin-bottom: 16px;
+    .example {
+      border-bottom: 1px solid $border-color;
+      padding: 0 16px 16px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .button-wrapper {
+      padding: 16px 16px 0;
+    }
+    .code {
+      margin: 0 16px;
+    }
+  }
+}
